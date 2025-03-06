@@ -13,11 +13,20 @@ app.use(bodyParser.json());
  */
 app.post('/execute', (req, res) => {
     let userInput = req.body.code;
-    try {
-        let result = vm.runInNewContext(userInput); // ⚠️ UNSAFE: Executes user-supplied JavaScript code
-        res.json({ result });
-    } catch (error) {
-        res.status(500).json({ error: 'Execution failed' });
+    const allowedOperations = {
+        'operation1': () => { return 'Result of operation 1'; },
+        'operation2': () => { return 'Result of operation 2'; },
+        // Add more allowed operations as needed
+    };
+    if (allowedOperations.hasOwnProperty(userInput)) {
+        try {
+            let result = allowedOperations[userInput]();
+            res.json({ result });
+        } catch (error) {
+            res.status(500).json({ error: 'Execution failed' });
+        }
+    } else {
+        res.status(400).json({ error: 'Invalid operation' });
     }
 });
 
