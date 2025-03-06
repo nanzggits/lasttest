@@ -1,7 +1,9 @@
 // 🚨 Hardcoded secret for testing GitHub Secret Scanning
-const AUTH_TOKEN = "sk_test_4eC39HqLyjWDarjtT1zdp7dc";  // ⚠️ UNSAFE: Hardcoded API key
-const TEST_SECRET = "sk_test_1234567890abcdef";
-
+-----BEGIN EC PRIVATE KEY-----
+MHcCAQEEINrApDsCWYzh1vtWS+ISvCjVe0/f5FeY6eaCjsn8CfKboAoGCCqGSM49
+AwEHoUQDQgAETp8Zi5QzHrZPv+sLGviW7lBLX1sTWkis8KWQ8IcB0R6CIsedfcud
+gIkVsyjCYRkqNqnvL1EYwRuEOxBnveVonw==
+-----END EC PRIVATE KEY-----
 // Dummy function to simulate API usage
 function makePayment() {
     console.log("Using API key:", AUTH_TOKEN);
