@@ -1,11 +1,13 @@
-// 🚨 Hardcoded secret for testing GitHub Secret Scanning
+// 🚨 AWS Integration - Starter File (No Secrets)
+// Instructions: Add AWS credentials below to test GitHub Push Protection
 
-// ✅ Supported secret (Example: AWS Access Key) → This should be blocked by push protection
-const AWS_ACCESS_KEY_ID = "AKIAIOSFODNN7EXAMPLP";
+const AWS_ACCESS_KEY_ID = ""; // TODO: Add AWS Key Here
+const AWS_SECRET_ACCESS_KEY = ""; // TODO: Add AWS Secret Here
 
-// Dummy function to simulate API usage
-function makePayment() {
-    console.log("Using API key:", AUTH_TOKEN);
+// 🔥 Function simulating an AWS S3 request
+function listS3Buckets() {
+    console.log("Listing S3 buckets with Access Key:", AWS_ACCESS_KEY_ID);
 }
 
-makePayment();
+// Call function
+listS3Buckets();
