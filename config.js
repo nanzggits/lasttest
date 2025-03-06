@@ -1,30 +1,10 @@
-// 🚨 Hardcoded secrets for testing GitHub Secret Scanning & Push Protection
-const STRIPE_LIVE_KEY = "sk_live_51L3g1tXbP3r5onD8DtgqZLHHYX5v9C8F3F2kJDbtOn";
+// 🚨 Hardcoded secret for testing GitHub Secret Scanning
+const AUTH_TOKEN = "sk_test_4eC39HqLyjWDarjtT1zdp7dc";  // ⚠️ UNSAFE: Hardcoded API key
+const TEST_SECRET = "sk_test_1234567890abcdef";
 
-// Import required module
-const https = require("https");
-
-// Function to make a test API request using the secret
+// Dummy function to simulate API usage
 function makePayment() {
-    const options = {
-        hostname: "api.stripe.com",
-        path: "/v1/charges",
-        method: "GET",
-        headers: {
-            "Authorization": `Bearer ${STRIPE_LIVE_KEY}`
-        }
-    };
-
-    const req = https.request(options, (res) => {
-        console.log(`STATUS: ${res.statusCode}`);
-    });
-
-    req.on("error", (e) => {
-        console.error(`Problem with request: ${e.message}`);
-    });
-
-    req.end();
+    console.log("Using API key:", AUTH_TOKEN);
 }
 
-// Call function to trigger API request
 makePayment();
